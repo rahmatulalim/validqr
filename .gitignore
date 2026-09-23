@@ -1,29 +1,61 @@
-# ===== Node.js / Backend =====
+# ========================
+# ValidQR — .gitignore
+# ========================
+
+# Node.js / Backend
 node_modules/
 dist/
 build/
-*.log
-npm-debug.log*
+*.js.map
 .env
 .env.local
+.env.production
 
-# ===== Flutter / Mobile =====
-mobile/.dart_tool/
-mobile/.flutter-plugins
-mobile/.flutter-plugins-dependencies
-mobile/.packages
-mobile/build/
-mobile/.idea/
-mobile/*.iml
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+*.g.dart
+*.freezed.dart
+pubspec.lock
 
-# ===== Editor / OS =====
-.vscode/
-.idea/
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.egg
+dist/
+.pytest_cache/
+
+# Generated QR Props (large binary — regenerate with script)
+demo/qr_props/*.png
+
+# OS
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
 
-# ===== Demo backup (video besar, tidak perlu di-commit) =====
-demo/backup/*.mp4
+# IDE
+.idea/
+.vscode/
+*.iml
 
-# ===== Testing coverage =====
+# Logs
+*.log
+logs/
+
+# Database
+*.dump
+*.sql.bak
+
+# Redis
+dump.rdb
+
+# Testing
 coverage/
+.nyc_output/

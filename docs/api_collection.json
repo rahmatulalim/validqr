@@ -1,0 +1,103 @@
+{
+  "info": {
+    "name": "ValidQR API",
+    "description": "API Gateway for ValidQR Anti-Fraud SDK",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Verify Scan (Sticker A - Valid)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nmid\": \"ID10293847561\",\n  \"merchantName\": \"Warung Bakso Pak Budi\",\n  \"latitude\": -6.8915,\n  \"longitude\": 107.6107\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/verify/scan",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "verify", "scan"]
+        }
+      }
+    },
+    {
+      "name": "Verify Scan (Sticker B - Penipu)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nmid\": \"ID99999999980\",\n  \"merchantName\": \"Toko Aksesoris Penipu\",\n  \"latitude\": -6.8915,\n  \"longitude\": 107.6107\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/verify/scan",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "verify", "scan"]
+        }
+      }
+    },
+    {
+      "name": "Verify Scan (Sticker C - Rebrand)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nmid\": \"ID10293847561\",\n  \"merchantName\": \"Bakso Budi Dipatiukur\",\n  \"latitude\": -6.8915,\n  \"longitude\": 107.6107\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/verify/scan",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "verify", "scan"]
+        }
+      }
+    },
+    {
+      "name": "Manual Fraud Alert",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nmid\": \"ID99999999980\",\n  \"suspectedMerchantName\": \"Toko Aksesoris Penipu\",\n  \"buyerLocation\": { \"latitude\": -6.8915, \"longitude\": 107.6107 }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/notify/fraud-alert",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "notify", "fraud-alert"]
+        }
+      }
+    }
+  ]
+}
