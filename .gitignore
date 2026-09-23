@@ -1,0 +1,29 @@
+# ===== Node.js / Backend =====
+node_modules/
+dist/
+build/
+*.log
+npm-debug.log*
+.env
+.env.local
+
+# ===== Flutter / Mobile =====
+mobile/.dart_tool/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.packages
+mobile/build/
+mobile/.idea/
+mobile/*.iml
+
+# ===== Editor / OS =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ===== Demo backup (video besar, tidak perlu di-commit) =====
+demo/backup/*.mp4
+
+# ===== Testing coverage =====
+coverage/
