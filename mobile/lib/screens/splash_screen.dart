@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primaryDark,
+      backgroundColor: AppColors.backgroundDark,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -43,12 +43,12 @@ class _SplashScreenState extends State<SplashScreen> {
             const SizedBox(height: AppSpacing.lg),
             Text(
               AppConstants.appName,
-              style: AppTextStyles.headlineLarge.copyWith(color: Colors.white),
+              style: AppTextStyles.modalTitle.copyWith(color: Colors.white),
             ),
             const SizedBox(height: AppSpacing.sm),
             Text(
               'HackNusa 2026',
-              style: AppTextStyles.bodyMedium.copyWith(color: Colors.white70),
+              style: AppTextStyles.modalSubtitle.copyWith(color: Colors.white70),
             ),
           ],
         ),

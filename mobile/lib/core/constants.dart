@@ -9,7 +9,7 @@ class AppConstants {
   // ── API Configuration ──────────────────────────────────────────────────
   /// Base URL for the ValidQR backend API.
   /// Update this to your ngrok/localtunnel URL before the demo.
-  static const String apiBaseUrl = 'http://10.0.2.2:3000';
+  static const String apiBaseUrl = 'http://localhost:3000';
   // For physical device via ngrok: 'https://xxxx.ngrok.io'
   // For local emulator: 'http://10.0.2.2:3000'
 
